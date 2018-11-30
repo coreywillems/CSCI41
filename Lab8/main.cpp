@@ -77,7 +77,12 @@ private:
   int N;
 
   void sink() {}
-  void swim() {}
+  // void swim(int k) {
+  //   while (k > 1 && less(k / 2, k)) {
+  //     swap(k, k / 2);
+  //     k = k / 2;
+  //   }
+  // }
 
 public:
   heap(int capacity) { hp = new int[capacity]; }
@@ -87,13 +92,14 @@ public:
   }
 };
 
+template <typename T> void print(T value) { cout << value << endl; }
+
 int main() {
   unorderedPQ uopq(3);
   uopq.insert(5);
   uopq.insert(10);
   uopq.insert(99);
   uopq.delMax();
-  // cout << uopq.top() << endl;
 
   orderedPQ opq(2);
   opq.insert(69);
@@ -105,5 +111,8 @@ int main() {
   // h.insert(100);
 
   cout << "is this thing on?" << endl;
+  print(5);
+  print("hello");
+  print(5.5f);
   return 0;
 }
